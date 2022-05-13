@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, url_for, redirect, session
 from pymongo import MongoClient
+
 import bcrypt
+
+from utils.database_context import db
 
 app = Flask(__name__)
 app.secret_key = "testing"
-CONNECTION_STRING = "mongodb://user:example@localhost:27017/admin"
-client = MongoClient(CONNECTION_STRING)
-db = client.get_database('total_records')
-records = db.register
+
+users = db.users
 page = 'index.html'
 login_page = 'login.html'
 @app.route("/", methods=['post', 'get'])
@@ -22,8 +23,8 @@ def index():
         cnp = request.form.get("cnp")
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
-        cnp_found = records.find_one({"cnp": cnp})
-        email_found = records.find_one({"email": email})
+        cnp_found = users.find_one({"cnp": cnp})
+        email_found = users.find_one({"email": email})
         if cnp_found:
             message = 'Exista deja un user cu acest CNP'
             return render_template(page, message=message)
@@ -36,9 +37,9 @@ def index():
         else:
             hashed = bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt())
             user_input = {'nume': user_lastname, 'email': email, 'password': hashed}
-            records.insert_one(user_input)
+            users.insert_one(user_input)
             
-            user_data = records.find_one({"email": email})
+            user_data = users.find_one({"email": email})
             new_email = user_data['email']
    
             return render_template('logged_in.html', email=new_email)
@@ -63,7 +64,7 @@ def login():
         password = request.form.get("password")
 
        
-        email_found = records.find_one({"email": email})
+        email_found = users.find_one({"email": email})
         if email_found:
             email_val = email_found['email']
             passwordcheck = email_found['password']
