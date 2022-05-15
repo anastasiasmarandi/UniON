@@ -8,7 +8,7 @@ class UserLoginRequest():
 schema = {
     'type': 'object',
     'properties': {
-        'email': {'type': 'string', "minLength": 5, "maxLength": 200},
+        'email': {'type': 'string', "minLength": 3, "maxLength": 200},
         'password': {'type': 'string', "minLength": 8, "maxLength": 200}
     },
     'required': ['email', 'password']

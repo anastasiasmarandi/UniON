@@ -12,8 +12,8 @@ class UserRegisterRequest():
 schema = {
     'type': 'object',
     'properties': {
-        'firstName': {'type': 'string', "minLength": 5, "maxLength": 200},
-        'lastName': {'type': 'string', "minLength": 5, "maxLength": 200},
+        'firstName': {'type': 'string', "minLength": 3, "maxLength": 200},
+        'lastName': {'type': 'string', "minLength": 3, "maxLength": 200},
         'email': {'type': 'string', "minLength": 5, "maxLength": 200},
         'cnp': {'type': 'string', "length": 13},
         'password': {'type': 'string', "minLength": 8, "maxLength": 200}
