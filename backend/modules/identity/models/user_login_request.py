@@ -1,9 +1,9 @@
 import hashlib
 
 class UserLoginRequest():
-    def __init__(self, dictionary) -> None:
-        self.email = dictionary['email']
-        self.password = hashlib.sha256(dictionary['password'].encode('utf-8')).hexdigest()
+    def __init__(self, credentials) -> None:
+        self.email = credentials['email']
+        self.password = hashlib.sha256(credentials['password'].encode('utf-8')).hexdigest()
 
 schema = {
     'type': 'object',
