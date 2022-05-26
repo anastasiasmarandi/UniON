@@ -1,1 +1,9 @@
-backend/__pycache__/*
+backend/__pycache__
+backend/utils/__pycache__
+backend/modules/__pycache__
+backend/modules/identity/__pycache__
+backend/modules/identity/models/__pycache__
+backend/modules/profile/__pycache__
+backend/modules/profile/models/__pycache__
+
+
