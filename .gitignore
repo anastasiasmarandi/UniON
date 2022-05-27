@@ -5,5 +5,8 @@ backend/modules/identity/__pycache__
 backend/modules/identity/models/__pycache__
 backend/modules/profile/__pycache__
 backend/modules/profile/models/__pycache__
+backend/modules/admin/__pycache__
+backend/modules/admin/models/__pycache__
+frontend/.vscode
 
 
