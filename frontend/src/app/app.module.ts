@@ -18,6 +18,7 @@ import { ContractStudiiComponent } from './contract-studii/contract-studii.compo
 import { OrarComponent } from './orar/orar.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { LogoutComponent } from './logout/logout.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LogoutComponent } from './logout/logout.component';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
