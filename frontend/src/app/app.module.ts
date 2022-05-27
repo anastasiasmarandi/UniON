@@ -18,6 +18,7 @@ import { ContractStudiiComponent } from './contract-studii/contract-studii.compo
 import { OrarComponent } from './orar/orar.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './login/login.component'
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     OrarComponent,
     CatalogComponent,
     LogoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

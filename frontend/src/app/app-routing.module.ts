@@ -6,9 +6,11 @@ import { ContractStudiiComponent } from './contract-studii/contract-studii.compo
 import { OrarComponent } from './orar/orar.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 
+  { path: 'login', component: LoginComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'date-personale', component: DatePersonaleComponent },
   { path: 'contract-studii', component: ContractStudiiComponent },
