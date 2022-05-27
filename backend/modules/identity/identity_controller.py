@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, Response
 from flask_expects_json import expects_json
 
 from modules.identity.models.user_login_request import UserLoginRequest
@@ -15,6 +15,9 @@ identityBlueprint = Blueprint('identity', __name__)
 @identityBlueprint.route('login', methods = ['POST'])
 @expects_json(loginSchema)
 def login():
+    auth_header = request.headers.get('Authorization')
+    if auth_header:
+        return Response('{"error": "Already logged in"}', 400)
     user = UserLoginRequest(request.get_json())
     result = identityService.login(user)
     return result

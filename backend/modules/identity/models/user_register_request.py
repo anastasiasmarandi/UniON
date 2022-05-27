@@ -1,5 +1,6 @@
-<<<<<<< HEAD
 import hashlib
+
+from utils.constants import STUDENT_ROLE
 
 class UserRegisterRequest():
     def __init__(self, user_data) -> None:
@@ -8,6 +9,7 @@ class UserRegisterRequest():
         self.cnp = user_data['cnp']
         self.email = user_data['email']
         self.password = hashlib.sha256(user_data['password'].encode('utf-8')).hexdigest()
+        self.role = STUDENT_ROLE
         
 
 schema = {
@@ -20,27 +22,4 @@ schema = {
         'password': {'type': 'string', "minLength": 8, "maxLength": 200}
     },
     'required': ['firstName', 'lastName', 'cnp', 'email', 'password']
-=======
-import hashlib
-
-class UserRegisterRequest():
-    def __init__(self, dictionary) -> None:
-        self.firstName = dictionary['firstName']
-        self.lastName = dictionary['lastName']
-        self.cnp = dictionary['cnp']
-        self.email = dictionary['email']
-        self.password = hashlib.sha256(dictionary['password'].encode('utf-8')).hexdigest()
-        
-
-schema = {
-    'type': 'object',
-    'properties': {
-        'firstName': {'type': 'string', "minLength": 3, "maxLength": 200},
-        'lastName': {'type': 'string', "minLength": 3, "maxLength": 200},
-        'email': {'type': 'string', "minLength": 5, "maxLength": 200},
-        'cnp': {'type': 'string', "length": 13},
-        'password': {'type': 'string', "minLength": 8, "maxLength": 200}
-    },
-    'required': ['firstName', 'lastName', 'cnp', 'email', 'password']
->>>>>>> 9c334c4a5c808e248f04e1d49af7d1d9308f7b2f
 }

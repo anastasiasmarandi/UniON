@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 backend/__pycache__
 backend/utils/__pycache__
 backend/modules/__pycache__
@@ -7,3 +8,17 @@ backend/modules/profile/__pycache__
 backend/modules/profile/models/__pycache__
 
 
+=======
+backend/__pycache__
+backend/utils/__pycache__
+backend/modules/__pycache__
+backend/modules/identity/__pycache__
+backend/modules/identity/models/__pycache__
+backend/modules/profile/__pycache__
+backend/modules/profile/models/__pycache__
+backend/modules/admin/__pycache__
+backend/modules/admin/models/__pycache__
+frontend/.vscode
+
+
+>>>>>>> 130587ec7d45a4a25fae7421d58794bd42cdb733

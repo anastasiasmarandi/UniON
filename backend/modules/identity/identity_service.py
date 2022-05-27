@@ -16,7 +16,7 @@ def login(user):
 
     token = create_token(databaseUser['_id'], databaseUser['email'])
     
-    return Response(str(UserLoginResponse(str(token), str(databaseUser['_id']), databaseUser['email'], databaseUser['firstName'], databaseUser['lastName'])), 200)
+    return Response(str(UserLoginResponse(token.decode('utf-8'), str(databaseUser['_id']), databaseUser['email'], databaseUser['firstName'], databaseUser['lastName'])), 200)
 
 def register(user):
     databaseUser = users.find_one({"email": user.email})
