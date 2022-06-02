@@ -25,6 +25,21 @@ def getUsers(auth_token):
     else:
         return Response('{"status": "error", "message": "Authentication error."}', 400)
 
+def getUser(auth_token, user_id):
+    if auth_token:
+        payload = jwt.decode(auth_token, key)
+        id = payload['sub']
+        user = users.find_one({"_id": ObjectId(id)})    
+        if (user['role'] == ADMIN_ROLE):
+            student = users.find_one({"_id": ObjectId(user_id)})
+            result = GetUserResponse(str(student['_id']), student['lastName'], student['firstName'], student['email'])
+            return Response(str(result)) 
+        else:
+            return Response('{"status": "error", "message": "Requires authorization."}', 400)
+    else:
+        return Response('{"status": "error", "message": "Authentication error."}', 400)
+
+
 def getFaculties(auth_token):
     if auth_token:
         payload = jwt.decode(auth_token, key)
@@ -33,6 +48,20 @@ def getFaculties(auth_token):
         if (user['role'] == ADMIN_ROLE):
             results = [str(GetFacultyResponse(str(f['_id']), f['name'])) for f in list(faculties.find())]
             return Response(results) 
+        else:
+            return Response('{"status": "error", "message": "Requires authorization."}', 400)
+    else:
+        return Response('{"status": "error", "message": "Authentication error."}', 400)
+
+def getFaculty(auth_token, faculty_id):
+    if auth_token:
+        payload = jwt.decode(auth_token, key)
+        id = payload['sub']
+        user = users.find_one({"_id": ObjectId(id)})    
+        if (user['role'] == ADMIN_ROLE):
+            faculty = faculties.find_one({"_id": ObjectId(faculty_id)})
+            result = GetFacultyResponse(str(faculty['_id']), faculty['name'])
+            return Response(str(result)) 
         else:
             return Response('{"status": "error", "message": "Requires authorization."}', 400)
     else:
@@ -62,7 +91,8 @@ def enroll(auth_token, enrollment, user_id):
                 {"$set": 
                     {
                         'faculty_id': enrollment.faculty_id,
-                        'department_id': enrollment.department_id
+                        'department_id': enrollment.department_id,
+                        'year': enrollment.year
                     }
                 }
             )

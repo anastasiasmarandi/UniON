@@ -5,6 +5,7 @@ class EnrollRequest():
     def __init__(self, enrollment) -> None:
         self.faculty_id = enrollment['faculty_id']
         self.department_id = enrollment['department_id']
+        self.year = enrollment['year']
         
 
 schema = {

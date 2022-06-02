@@ -19,6 +19,16 @@ def getUsers():
     
     return result
 
+@adminBlueprint.route('users/<user_id>')
+def getUser(user_id):
+    auth_header = request.headers.get('Authorization')
+    if auth_header:
+        auth_token = auth_header
+    else:
+        auth_token = ''
+    result = adminService.getUser(auth_token, user_id)
+    return result
+
 @adminBlueprint.route('faculties', methods = ['GET'])
 def getFaculties():
     auth_header = request.headers.get('Authorization')
@@ -27,6 +37,16 @@ def getFaculties():
     else:
         auth_token = ''
     result = adminService.getFaculties(auth_token)
+    return result
+
+@adminBlueprint.route('faculties/<faculty_id>', methods = ['GET'])
+def getFaculty(faculty_id):
+    auth_header = request.headers.get('Authorization')
+    if auth_header:
+        auth_token = auth_header
+    else:
+        auth_token = ''
+    result = adminService.getFaculty(auth_token, faculty_id)
     return result
 
 @adminBlueprint.route('departments', methods = ['GET'])
