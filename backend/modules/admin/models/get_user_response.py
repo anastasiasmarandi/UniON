@@ -1,7 +1,8 @@
 import json
 
 class GetUserResponse():
-    def __init__(self, firstName, lastName, email) -> None:
+    def __init__(self, _id, firstName, lastName, email) -> None:
+        self._id = _id
         self.firstName = firstName
         self.lastName = lastName
         self.email = email

@@ -8,7 +8,6 @@ backend/modules/profile/models/__pycache__
 backend/modules/admin/__pycache__
 backend/modules/admin/models/__pycache__
 frontend-react/node-modules
-frontend/node-modules
 frontend-react/package-lock.json
-frontend/package-lock.json
 .vscode/
+

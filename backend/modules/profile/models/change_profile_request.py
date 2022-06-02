@@ -1,5 +1,3 @@
-import hashlib
-
 class ChangeProfileRequest():
     def __init__(self, user_data) -> None:
         self.firstName = user_data['firstName']
