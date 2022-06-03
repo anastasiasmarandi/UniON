@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 
 
 from jsonschema import ValidationError
@@ -10,6 +11,7 @@ from modules.contracts.contracts_controller import contractsBlueprint
 
 
 app = Flask(__name__)
+CORS(app)
 
 app.register_blueprint(identityBlueprint, url_prefix='/')
 app.register_blueprint(profileBlueprint, url_prefix='/profile')

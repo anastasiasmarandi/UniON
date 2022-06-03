@@ -54,7 +54,7 @@ def generatePdf(user_data, courses_data, faculty_data):
     pdf.set_font('Arial', 'B', 12)
     pdf.cell(w=0.0, h=0.0, txt=f"Nume: {user_data['lastName']}", border=0, ln=2)
     pdf.cell(w=30.0, h=15.0, txt=f"Prenume: {user_data['lastName']}", border=0, ln=2)
-    # pdf.cell(w=10.0, h=80.0, align='L', txt=f"Facultate: {faculty_data['name']}", border=0)
+    pdf.cell(w=30.0, h=0.0, txt=f"Facultate: {faculty_data['name']}", border=0, ln=2)
     pdf.cell(w=30.0, h=0.0, txt=f"An de studiu: {user_data['year']}", border=0, ln=2)
     pdf.output('test.pdf', 'F')
 

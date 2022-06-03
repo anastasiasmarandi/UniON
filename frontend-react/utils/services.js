@@ -9,8 +9,10 @@ export const loginUser = async (mail, passw) => {
 
   const response = await fetch(url, {
     method: "POST",
-    mode: "no-cors",
-    body: body,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body),
   });
 
   return response;
@@ -28,8 +30,10 @@ export const registerUser = async (firstName, lastName, cnp, mail, passw) => {
 
   const response = await fetch(url, {
     method: "POST",
-    mode: "no-cors",
-    body: body,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body),
   });
 
   return response;
