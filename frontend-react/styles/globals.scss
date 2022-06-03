@@ -79,3 +79,127 @@ a {
     font-weight: bold;
   }
 }
+
+.dashboard-page {
+  .link1 {
+    position: absolute;
+    width: 140px;
+    height: 29px;
+    top: 140px;
+    margin-left: 70px;
+    align-self: left;
+  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 25px;
+  
+    color: #F0EDEC;
+  }
+  .link2 {
+    position: absolute;
+    width: 220px;
+    height: 28px;
+    top: 180px;
+    margin-left: 70px;
+    align-self: left;
+  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+  
+    color: #F0EDEC;
+  }
+  .link3 {
+    position: absolute;
+    width: 222px;
+    height: 29px;
+    top: 220px;
+    margin-left: 70px;
+    align-self: left;
+  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+  
+    color: #F0EDEC;
+  }
+  .link4 {
+    position: absolute;
+    width: 55px;
+    height: 29px;
+    top: 260px;
+    margin-left: 70px;
+    align-self: left;
+  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+  
+    color: #F0EDEC;
+  }
+  .link5 {
+    position: absolute;
+    width: 96px;
+    height: 29px;
+    top: 300px;
+    margin-left: 70px;
+    align-self: left;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+  
+    color: #F0EDEC;
+  }
+  .link6 {
+    position: absolute;
+    width: 96px;
+    height: 29px;
+    top: 530px;
+    margin-left: 70px;
+    align-self: left;
+  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+  
+    color: #F0EDEC;
+  }
+  .nav-bar {
+    background-color: $primary-color;
+  }
+  .logo-dash {
+    width: 50%;
+    height: 60px;
+    position: relative;
+    align-self: center;
+    background-image: url('/images/logo-dash.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    background-color: $primary-color;
+  }
+  .line {
+      width: 107%;
+      height: 70px;
+      top: 400px;
+      position: relative;
+      align-self: center;
+      background-image: url('/images/line.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left;
+  }
+}

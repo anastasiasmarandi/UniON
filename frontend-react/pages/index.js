@@ -24,6 +24,7 @@ const Home = () => {
     <div className="login-page">
       <div className="bg-circle circle-1" />
       <div className="bg-circle circle-2" />
+      <div className="bg-color" />
 
       <Head>
         <title>Login</title>
